@@ -1,6 +1,13 @@
-# PIL-DC_Motor_Control
-Cascaded PID for Controlling DC Motor's speed and current on Processor-in-the-Loop environment
+# Cascaded PID for Controlling DC Motor's speed and current on Processor-in-the-Loop environment
 
-In this work, we create a model of the DC motor using Simulink and implement a cascaded PID control algorithm on Arduino Uno to regulate the speed and current of a DC motor. To establish communication between the DC motor model and the control algorithm, we employ serial communication on both Arduino and Simulink. The details for implementing the serial communication block to interface with Arduino can be found [here](https://github.com/leomariga/Simulink-Arduino-Serial).
+## Overview
 
-For the complete explanation, please refer to "The Cascaded PID-PI Controller for Speed and Current Regulation of DC Motor with Ziegler-Nichols Stability Limit Tuning Method.pdf"
+This project designs and implements a cascade PID and PI controller to simultaneously control motor speed and armature current in a DC motor. Initial controller gains are set using the Ziegler-Nichols stability tuning method. By employing the cascade control strategy, it enhances performance by decoupling the speed and current control loops. The controller's effectiveness is tested through Processor-in-the-Loop using serial communication between a DC motor model on Simulink and an Arduino Uno.
+![PIL_DCMotor](https://github.com/user-attachments/assets/86e66d77-133a-42e3-856d-e8324e8ccea5)
+
+The details for implementing the serial communication block to interface with Arduino can be found [here](https://github.com/leomariga/Simulink-Arduino-Serial).
+
+## Project Structure
+* **Arduino:** containing the code of cascaded speed and current controller and the interface for processor-in-the-loop environment
+* **Simulink:** DC motor model implemented on Simulink
+* **The Cascaded PID-PI Controller for Speed and Current Regulation of DC Motor with Ziegler-Nichols Stability Limit Tuning Method.pdf:** Full report on the project
